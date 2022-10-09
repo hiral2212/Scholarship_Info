@@ -1,3 +1,12 @@
+<?php
+
+include('database/include.php');
+if(!isset($_SESSION['loggedin']) {
+    echo "<script>window.open('./Homepage.php','_self')</script>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

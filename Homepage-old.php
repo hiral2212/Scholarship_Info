@@ -1,7 +1,3 @@
-<?php
-include('database/include.php');
-
-?>
 <!DOCTYPE html>
 <!-- saved from url=(0035)https://scholarships.gov.in/enghome -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -71,23 +67,11 @@ include('database/include.php');
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="Homepage.php" style="color: white;">Home</a>
-                            <a class="nav-link" href="admin_panel1.php" style="color: white;">Authenticate user</a>
-                            <a class="nav-link" href="s_dashboard.php" style="color: white;">Authenticate Scholarship</a>
-                            <a class="nav-link" href="special_useer.php" style="color: white;">Add Scholarships</a>
-                            <?php
-                            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                            ?> <li class="list-inline-item fs-3">
-                                    <a title="Skip to main content" href="https://scholarships.gov.in/enghome#skipcontent">
-                                        Login : <?php echo $_SESSION['useremail']; ?>
-                                    </a>
-                                    <a href="./logout.php" class="btn btn-primary ml-2">Logout</a>
-                                    </form>
-                                <?php } else { ?>
-                                    <a title="Skip to main content" href="./login_regi.php">
-                                        Login : welcome user
-                                    </a>
-                                <?php } ?>
+                            <a class="nav-link active" aria-current="page" href="" style="color: white;">Home</a>
+                            <a class="nav-link" href="" style="color: white;">Authenticate user</a>
+                            <a class="nav-link" href="" style="color: white;">Authenticate Scholarship</a>
+                            <a class="nav-link" href="" style="color: white;">Add Scholarships</a>
+                            <a href="" class="nav-link" style="color: white;"> Login : welcome user</a>
                         </div>
                     </div>
                 </div>
@@ -237,6 +221,10 @@ include('database/include.php');
                             <div class="card-body notificationbody border border-primary">
                                 <marquee onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll" scrollamount="3" direction="up" loop="infinite" height="165px">
                                     <ul class="notificationlist list-unstyled text-justify">
+                                        <!--                                    <li>
+                                        <i class="fa fa-info-circle"></i>&nbsp;
+                                    </li>-->
+
                                         <li>
                                             <i class="fa fa-info-circle">
                                             </i>&nbsp;All grievances related to delay in Application Verification, Scheme
@@ -345,6 +333,7 @@ include('database/include.php');
                     </div>
 
                     <div class="col-sm-8">
+                        </ul>
                         <div id="accordion btn-group">
                             <button type="button" class="card-btn btn " style="background:#7ca51d;" data-toggle="collapse" data-target="#collapseA">
 
@@ -360,34 +349,188 @@ include('database/include.php');
                                 <i class="fas fa-plus float-right "></i>
                             </button><br><br>
 
-                            <?php
 
-                            $sql = "SELECT * FROM `scholarship_details` WHERE `scholarship_status` = 2 AND `state` IS NOT null";
-                            $result = mysqli_query($conn, $sql);
-                            if (mysqli_num_rows($result) > 0) {
-                                $i = 0;
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    $id = $row['id'];
-                            ?>
-                                    <div id="collapseA" class="collapseA">
+                            <div id="collapseA" class="collapseA">
+                                <div class="card-body">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h1 class="accordion-header" style="background:#cfe789" id="headingOne">
+
+                                                <button class="accordion-button" style="color:#7ca51d;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <b> GUJARAT</b>
+
+                                                </button>
+                                            </h1>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionA">
+                                                <div class="accordion-body">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Sr no.</th>
+                                                                <th scope="col">Scholarship name</th>
+                                                                <th scope="col">Starting Date</th>
+                                                                <th scope="col">Ending Date</th>
+                                                                <th scope="col">Apply for Schholarship</th>
+                                                                <th>GuidesLines/FAQ</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Mark</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">2</th>
+                                                                <td>Jacob</td>
+                                                                <td>Thornton</td>
+                                                                <td>@fat</td>
+                                                                <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Larry</td>
+                                                                <td>the Bird</td>
+                                                                <td>@twitter</td>
+                                                                <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h1 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" style="color:#7ca51d;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    <b>GOA</b>
+                                                </button>
+                                            </h1>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionB">
+                                                <div class="accordion-body">
+                                                    <strong>
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Sr no.</th>
+                                                                    <th scope="col">Scholarship name</th>
+                                                                    <th scope="col">Starting Date</th>
+                                                                    <th scope="col">Ending Date</th>
+                                                                    <th scope="col">Apply for Schholarship</th>
+                                                                    <th>GuidesLines/FAQ</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">1</th>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                    <td><a href="#" style="color:#7ca51d">Download Now</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">2</th>
+                                                                    <td>Jacob</td>
+                                                                    <td>Thornton</td>
+                                                                    <td>@fat</td>
+                                                                    <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                    <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">3</th>
+                                                                    <td>Larry</td>
+                                                                    <td>the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                    <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h1 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" style="color:#7ca51d;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    <b>MAHARASHTRA</b>
+                                                </button>
+                                            </h1>
+                                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <strong>
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Sr no.</th>
+                                                                    <th scope="col">Scholarship name</th>
+                                                                    <th scope="col">Starting Date</th>
+                                                                    <th scope="col">Ending Date</th>
+                                                                    <th scope="col">Apply for Schholarship</th>
+                                                                    <th>GuidesLines/FAQ</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">1</th>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                    <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">2</th>
+                                                                    <td>Jacob</td>
+                                                                    <td>Thornton</td>
+                                                                    <td>@fat</td>
+                                                                    <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                    <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">3</th>
+                                                                    <td>Larry</td>
+                                                                    <td>the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                    <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </strong>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <div id="collapseB" class="collapseB">
+                                    <div class="card-body">
                                         <div class="card-body">
                                             <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">
-                                                    <h1 class="accordion-header" style="background:#cfe789" id="heading<?php echo $id; ?>">
-
-                                                        <button class="accordion-button " <?php if ($i != 0) {
-                                                                                                echo "collapse";
-                                                                                            } ?>"" style="color:#7ca51d;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $id; ?>" aria-expanded="<?php if ($i == 0) {
-                                                                                                                                                                                                                                    echo "true";
-                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                    echo "false";
-                                                                                                                                                                                                                                } ?>" aria-controls="collapse<?php echo $id; ?>">
-                                                            <b><?php $row['state'] ?></b>
+                                                    <h1 class="accordion-header" id="headingOne">
+                                                        <button class="accordion-button" style="color:#7ca51d" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="true" aria-controls="collapsefive">
+                                                            <b>India</b>
                                                         </button>
                                                     </h1>
-                                                    <div id="collapse<?php echo $id; ?>" class="accordion-collapse collapse " <?php if ($i == 0) {
-                                                                                                                                    echo "show";
-                                                                                                                                } ?>"" aria-labelledby="heading<?php echo $id; ?>" data-bs-parent="#accordionA">
+                                                    <div id="collapsefive" class="accordion-collapse collapse show" aria-labelledby="headingfive" data-bs-parent="#accordionB">
                                                         <div class="accordion-body">
                                                             <table class="table table-striped">
                                                                 <thead>
@@ -401,134 +544,105 @@ include('database/include.php');
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <?php
-                                                                    $statwhich = $row['state'];
-                                                                    $state = "SELECT * FROM `scholarship_details` WHERE `scholarship_status` = 2 AND `state` = $statwhich";
-                                                                    $samestate = mysqli_query($conn, $state);
-                                                                    $searchUser = "SELECT * FROM `special_user` WHERE `email` = ? AND `status` != 0 AND `portal_url` != ?";
-                                                                    $queryForUser = $conn->prepare($searchUser);
-                                                                    $queryForUser->bind_param("ss", $email,$purl);
-                                                                    $queryForUser->execute();
-                                                                    $userFound = $queryForUser->get_result();
-                                                                    if (mysqli_num_rows($samestate) > 0) {
-                                                                        $j = 0;
-                                                                        while ($rowSameState = mysqli_fetch_assoc($result)) {
-                                                                            $id = $rowSameState['id'];
-                                                                    ?>
-                                                                            <tr>
-                                                                                <th scope="row"><?php echo $j; ?></th>
-                                                                                <td><?php $rowSameState['name'] ?></td>
-                                                                                <td><?php $rowSameState['s_date'] ?></td>
-                                                                                <td><?php $rowSameState['e_date'] ?></td>
-                                                                                <td style="text-align: center;"><button class="btn" style=" color:aliceblue;background-color:#7ca51d;"><a href="<?php echo $rowSameState['link']; ?>">Apply</a></button></td>
-                                                                                <td><a href="<?php $rowSameState['guidence'] ?>" style="color:#7ca51d;">Guidence</a> &nbsp; <a href="<?php $rowSameState['faq'] ?>" style="color:#7ca51d;">FAQ</a></td>
-                                                                            </tr>
-                                                                    <?php
-                                                                        }
-                                                                        $j++;
-                                                                    }
-                                                                    ?>
-                                                                </tbody>
-                                                            </table>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            <?php
-                                }
-                                $i++;
-                            }
-                            ?>
-                            <?php
-
-                            $sql1 = "SELECT * FROM `scholarship_details` WHERE `scholarship_status` = 2 AND `country` IS NOT NULL";
-                            $result1 = mysqli_query($conn, $sql1);
-                            if (mysqli_num_rows($result1) > 0) {
-                                $i = 0;
-                                while ($row = mysqli_fetch_assoc($result1)) {
-                                    $id = $row['id'];
-                            ?>
-                                    <div id="collapseB" class="collapseB">
-                                        <div class="card-body">
-                                            <div class="accordion" id="accordionExample">
-                                                <div class="accordion-item">
-                                                    <h1 class="accordion-header" style="background:#cfe789" id="heading<?php echo $id; ?>">
-
-                                                        <button class="accordion-button " <?php if ($i != 0) {
-                                                                                                echo "collapse";
-                                                                                            } ?>"" style="color:#7ca51d;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $id; ?>" aria-expanded="<?php if ($i == 0) {
-                                                                                                                                                                                                                                    echo "true";
-                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                    echo "false";
-                                                                                                                                                                                                                                } ?>" aria-controls="collapse<?php echo $id; ?>">
-                                                            <b><?php $row['country'] ?></b>
-                                                        </button>
-                                                    </h1>
-                                                    <div id="collapse<?php echo $id; ?>" class="accordion-collapse collapse " <?php if ($i == 0) {
-                                                                                                                                    echo "show";
-                                                                                                                                } ?>"" aria-labelledby="heading<?php echo $id; ?>" data-bs-parent="#accordionB">
-                                                        <div class="accordion-body">
-                                                            <table class="table table-striped">
-                                                                <thead>
                                                                     <tr>
-                                                                        <th scope="col">Sr no.</th>
-                                                                        <th scope="col">Scholarship name</th>
-                                                                        <th scope="col">Starting Date</th>
-                                                                        <th scope="col">Ending Date</th>
-                                                                        <th scope="col">Apply for Schholarship</th>
-                                                                        <th>GuidesLines/FAQ</th>
+                                                                        <th scope="row">1</th>
+                                                                        <td>Mark</td>
+                                                                        <td>Otto</td>
+                                                                        <td>@mdo</td>
+                                                                        <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                        <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
                                                                     </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <?php
-                                                                    $countryWhich = $row['country'];
-                                                                    $state = "SELECT * FROM `scholarship_details` WHERE `scholarship_status` = 2 AND `state` = $countryWhich";
-                                                                    $sameCountry = mysqli_query($conn, $state);
-                                                                    if (mysqli_num_rows($sameCountry) > 0) {
-                                                                        $j = 0;
-                                                                        while ($rowSameCountry = mysqli_fetch_assoc($result)) {
-                                                                            $id = $rowSameCountry['id'];
-                                                                    ?>
-                                                                            <tr>
-                                                                                <th scope="row"><?php echo $j; ?></th>
-                                                                                <td><?php $rowSameCountry['name'] ?></td>
-                                                                                <td><?php $rowSameCountry['s_date'] ?></td>
-                                                                                <td><?php $rowSameCountry['e_date'] ?></td>
-                                                                                <td style="text-align: center;"><button class="btn" style=" color:aliceblue;background-color:#7ca51d;"><a href="<?php echo $rowSameCountry['link']; ?>">Apply</a></button></td>
-                                                                                <td><a href="<?php $rowSameCountry['guidence'] ?>" style="color:#7ca51d;">Guidence</a> &nbsp; <a href="<?php $rowSameCountry['faq'] ?>" style="color:#7ca51d;">FAQ</a></td>
-                                                                            </tr>
-                                                                    <?php
-                                                                        }
-                                                                        $j++;
-                                                                    }
-                                                                    ?>
+                                                                    <tr>
+                                                                        <th scope="row">2</th>
+                                                                        <td>Jacob</td>
+                                                                        <td>Thornton</td>
+                                                                        <td>@fat</td>
+                                                                        <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                        <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td>Larry</td>
+                                                                        <td>the Bird</td>
+                                                                        <td>@twitter</td>
+                                                                        <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                        <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                                    </tr>
                                                                 </tbody>
                                                             </table>
 
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <h1 class="accordion-header" id="headingOne">
+                                                    <button class="accordion-button" style="color:#7ca51d;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseB2" aria-expanded="false" aria-controls="collapseB2">
+                                                        <b>Cenada</b>
+                                                    </button>
+                                                </h1>
+                                                <div id="collapseB2" class="accordion-collapse collapse show" aria-labelledby="headingB2" data-bs-parent="#accordionB">
+                                                    <div class="accordion-body">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Sr no.</th>
+                                                                    <th scope="col">Scholarship name</th>
+                                                                    <th scope="col">Starting Date</th>
+                                                                    <th scope="col">Ending Date</th>
+                                                                    <th scope="col">Apply for Schholarship</th>
+                                                                    <th>GuidesLines/FAQ</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">1</th>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                    <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">2</th>
+                                                                    <td>Jacob</td>
+                                                                    <td>Thornton</td>
+                                                                    <td>@fat</td>
+                                                                    <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                    <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">3</th>
+                                                                    <td>Larry</td>
+                                                                    <td>the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    <td><button class="btn" style=" color:aliceblue;background-color:#7ca51d;">Apply</button></td>
+                                                                    <td><a href="#" style="color:#7ca51d;">Download Now</a></td>
+
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
-                            <?php
-                                }
-                                $i++;
-                            }
-                            ?>
+
+                                </div>
+                            </div>
+                            </center>
+                            <script>
+                                $('.card-btn').click(function() {
+                                    $(this).find('i').toggleClass('fas fa-plus fas fa-minus')
+                                });
+                            </script>
+
 
                         </div>
                     </div>
-                    <script>
-                        $('.card-btn').click(function() {
-                            $(this).find('i').toggleClass('fas fa-plus fas fa-minus')
-                        });
-                    </script>
-                </div>
-            </div>
         </section>
         <section class="footerthird pt-2" style="background-color: #cfe789;">
             <div class="container-fluid">

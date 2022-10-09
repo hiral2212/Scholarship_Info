@@ -17,7 +17,9 @@ if (isset($_POST['login-submit'])) {
             if ($res->num_rows) {
                 $databasePWD = $userDetails['password'];
                 if ($pwd === $databasePWD) {
-                    // $_SESSION['userId'] = $userDetails['id'];
+                    $_SESSION['loggedin'] = true;
+                    $_SESSION['useremail'] = $email;
+                    $_SESSION['userId'] = $userDetails['id'];
                     echo "<script>alert('Successfully Login !!')</script>";
                     echo "<script>window.open('./admin_panel1.php','_self')</script>";
                 } else {
