@@ -21,6 +21,16 @@
 
     <style>
         /* Make the image fully responsive */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
 
         .carousel-inner img {
             width: 100%;
@@ -49,7 +59,7 @@
 
 
     <section class="govtinfo">
-        <div class="container-fluid">
+        <div class="container-fluid m-0 p-0">
             <nav class="navbar navbar-expand-lg fs-5" style="background-color: #cfe789">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,52 +76,6 @@
                     </div>
                 </div>
             </nav>
-            <!-- <div class="row  justify-content-between">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
-                    <ul class="list-unstyled list-inline">
-
-                    </ul>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <ul class="list-unstyled list-inline toprightlink" style="float: right; padding: 3px 0px;">
-                        <li class="list-inline-item fs-3">
-                            <a title="Home" href="https://scholarships.gov.in/">
-                                Home
-                            </a>
-                        </li>
-                        <li class="list-inline-item fs-3">
-                            <a title="Authenticate user" href="https://scholarships.gov.in/">
-                                Authenticate User
-                            </a>
-                        </li>
-                        <li class="list-inline-item fs-3">
-                            <a title="authenticate scholarship" href="https://scholarships.gov.in/">
-                                Authenticate Scholarship
-                            </a>
-                        </li>
-
-
-                        <li class="list-inline-item fs-3">
-                            <a title="Add scholarship" href="https://scholarships.gov.in/">
-                                Add Scholarships
-                            </a>
-                        </li>
-
-
-                        <li class="list-inline-item fs-3">
-                            <a title="Skip to main content" href="https://scholarships.gov.in/enghome#skipcontent">
-                                Login : welcome user
-                            </a>
-                        </li>
-                        <!--<li class="list-inline-item">
-                            <a title="Skip to main content" href="#">
-                                Screen reader access
-                            </a>
-                        </li>-->
-            <!-- 
-            </ul>
-        </div>
-        </div> -->
         </div>
     </section>
     <section class="headertop">
@@ -119,7 +83,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 py-4">
                     <h1 class="text-center" style="color:#7ca51d;">ScholarshipInfo Portal</h1>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
@@ -128,16 +92,16 @@
         </div>
     </section>
     <section>
-        <div id="carouselExampleControls" class="carousel slide" style="height: 40vh;" data-bs-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide" style="height: 60vh;" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://th.bing.com/th/id/R.a28d0c5bb6ffc765e759795c201edc3d?rik=aaqeLciIRi4Wfw&riu=http%3a%2f%2foahs.us%2fwp-content%2fuploads%2f2019%2f03%2fScholarship-Opportunities-01.jpg&ehk=W1LSF5xvp3tjY3KrQ9UG6bBogGmNbx2m9WNEtklGpOs%3d&risl=&pid=ImgRaw&r=0" class="img-fluid" style="width: 100%;height: 40vh;" alt="...">
+                    <img src="https://th.bing.com/th/id/R.a28d0c5bb6ffc765e759795c201edc3d?rik=aaqeLciIRi4Wfw&riu=http%3a%2f%2foahs.us%2fwp-content%2fuploads%2f2019%2f03%2fScholarship-Opportunities-01.jpg&ehk=W1LSF5xvp3tjY3KrQ9UG6bBogGmNbx2m9WNEtklGpOs%3d&risl=&pid=ImgRaw&r=0" class="img-fluid" style="width: 100%;height: 60vh;" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://th.bing.com/th/id/OIP.nn0caWqMXPasFIhHXlb6fQHaE7?w=248&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" class="img-fluid" style="width: 100%;height: 40vh;" alt="...">
+                    <img src="https://th.bing.com/th/id/OIP.nn0caWqMXPasFIhHXlb6fQHaE7?w=248&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" class="img-fluid" style="width: 100%;height: 60vh;" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://th.bing.com/th/id/OIP.E_D2cmwRANoSy-_xOM-79AHaEX?w=279&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" class="img-fluid" style="width: 100%;height: 40vh;" alt="...">
+                    <img src="https://th.bing.com/th/id/OIP.E_D2cmwRANoSy-_xOM-79AHaEX?w=279&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" class="img-fluid" style="width: 100%;height: 60vh;" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -680,7 +644,7 @@
                         </div>
                     </div>
         </section>
-        <section class="footerthird p-3" style="background-color: #cfe789;">
+        <section class="footerthird pt-2" style="background-color: #cfe789;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex">
@@ -712,12 +676,12 @@
             </div>
         </section>
 
-        <section class="footerfirst" style="background-color: #cfe789;">
+        <section class="footerfirst pt-3" style="background-color: black;color:white">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 offset-xl-3 offset-lg-2 pb-1 pt-1">
                         <p class="text-center disclaimer">
-                            This site is designed, developed and hosted by <a href="#" target="_blank">___</a>
+                            This site is designed, developed with all copyrights.<br> Updated at 9th October 2022
                         </p>
                     </div>
                     <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 offset-xl-2 offset-lg-1 pb-2">
