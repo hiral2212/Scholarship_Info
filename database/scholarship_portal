@@ -1,0 +1,169 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 09, 2022 at 07:22 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `scholarship_portal`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_panel`
+--
+
+CREATE TABLE `admin_panel` (
+  `id` int(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin_panel`
+--
+
+INSERT INTO `admin_panel` (`id`, `username`, `password`) VALUES
+(1, 'admin12@gmail.com\r\n', '6590103c5c43da5e786fb93e24945f57'),
+(2, 'admin2@gmail.com', '6590103c5c43da5e786fb93e24945f57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `scholarship_details`
+--
+
+CREATE TABLE `scholarship_details` (
+  `name` varchar(255) NOT NULL,
+  `income` int(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  `category_type` varchar(255) NOT NULL,
+  `academic eligibility` varchar(255) NOT NULL,
+  `s_date` varchar(255) NOT NULL,
+  `e_date` varchar(255) NOT NULL,
+  `h_status` varchar(255) NOT NULL,
+  `s_type` varchar(255) NOT NULL,
+  `s_amount` varchar(255) NOT NULL,
+  `about` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `s_category` varchar(255) NOT NULL,
+  `guidence` varchar(255) NOT NULL,
+  `faq` varchar(255) NOT NULL,
+  `id` int(255) NOT NULL,
+  `auth_id` int(255) NOT NULL,
+  `scholarship_status` int(255) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `scholarship_details`
+--
+
+INSERT INTO `scholarship_details` (`name`, `income`, `type`, `state`, `category_type`, `academic eligibility`, `s_date`, `e_date`, `h_status`, `s_type`, `s_amount`, `about`, `link`, `s_category`, `guidence`, `faq`, `id`, `auth_id`, `scholarship_status`) VALUES
+('MYSY For Scolars', 100000, '0', '', '0', '10th Pass', '2022-10-21', '2022-10-30', '0', '0', '12000', 'Each student can get benifits for this.', '0', '0', 'Scholarships/WhatsApp Image 2022-09-14 at 5.21.41 PM.jpegMYSY', 'Scholarships/WhatsApp Image 2022-09-01 at 11.10.37 PM.jpegMYSY', 1, 1, 1),
+('FFE', 100000, 'national', '', 'SEBC', '10th Pass', '2022-10-02', '2022-10-30', 'both', 'private', '40000', 'For Freshers', 'https://ffe/applyfresher.ac.in', 'both', 'Scholarships/MYSY/200170116021_CS_P2.pdf', 'Scholarships/200170116021_CS_P3.pdfMYSY', 2, 1, 1),
+('FFE', 100000, 'national', '', 'SEBC', '12th Pass', '2022-10-23', '2022-11-08', 'both', 'private', '40000', 'For freshers', 'https://ffe/applyfresher.ac.in', 'both', 'Scholarships/MYSY/200170116021_CS_P2.pdf', 'Scholarships/200170116021_CS_P3.pdfMYSY', 3, 1, 1),
+('MacD', 100000, 'national', '', 'all', '12th Pass', '2022-10-07', '2022-10-21', 'true', 'government', '40000', 'for fresher\'s', 'https://mysy/apply.ac.in', 'both', 'Scholarships/FFE200170116021_ADA_P02.pdf', 'Scholarships/FFE200170116021_ADA_P01.pdf', 4, 1, 1),
+('MacD', 100000, 'national', '', 'all', '12th Pass', '2022-10-07', '2022-10-21', 'true', 'government', '40000', 'for fresher\'s', 'https://mysy/apply.ac.in', 'both', 'Scholarships/MacD/200170116021_CN_01.pdf', 'Scholarships/MacD/200170116021_CN_P04.pdf', 5, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `special_user`
+--
+
+CREATE TABLE `special_user` (
+  `id` int(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `portal_name` varchar(255) NOT NULL,
+  `portal_url` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `status` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `special_user`
+--
+
+INSERT INTO `special_user` (`id`, `email`, `portal_name`, `portal_url`, `password`, `status`) VALUES
+(1, 'govind@duck.com', 'MYSY', 'http://mysy.org.in', '64a959ded75b9b2ce8b5d42ff421b7a5', 2),
+(2, 'sannin6877@gmail.com', 'FFE', 'https://ffe.org.in', 'dd368b8eae7092125afa4a7447456cad', 1),
+(3, 'krutikapra92@gmail.com', 'Digital Gujarat', 'https://dg.ac.in', '0d3fec75d12d60032452f317d702e745', 1),
+(4, 'mayank@gmail.com', 'Collgate', 'http://clg.ac.in', '1339303fc94e65a8f06cd2b31ff35f0c', 1),
+(5, 'mayank1@gmail.com', 'Flipkart', 'https:flipkart.com', '73d73f5f2d6f8be4ec3cd30255b99dac', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin_panel`
+--
+ALTER TABLE `admin_panel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `scholarship_details`
+--
+ALTER TABLE `scholarship_details`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `auth_id` (`auth_id`),
+  ADD KEY `auth_permit_id` (`auth_id`);
+
+--
+-- Indexes for table `special_user`
+--
+ALTER TABLE `special_user`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin_panel`
+--
+ALTER TABLE `admin_panel`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `scholarship_details`
+--
+ALTER TABLE `scholarship_details`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `special_user`
+--
+ALTER TABLE `special_user`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `scholarship_details`
+--
+ALTER TABLE `scholarship_details`
+  ADD CONSTRAINT `auth_permit_id` FOREIGN KEY (`auth_id`) REFERENCES `special_user` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
